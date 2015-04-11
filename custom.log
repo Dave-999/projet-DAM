@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdftex 2014.11.23)  16 DEC 2014 15:19
+entering extended mode
+**C:/Users/David/Documents/GitHub/projet-1225/custom.sty
+(C:/Users/David/Documents/GitHub/projet-1225/custom.sty
+! Undefined control sequence.
+l.1 \NeedsTeXFormat
+                   {LaTeX2e}
+? 
+! Emergency stop.
+l.1 \NeedsTeXFormat
+                   {LaTeX2e}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
