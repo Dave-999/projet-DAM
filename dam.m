@@ -1,5 +1,5 @@
 function [] = dam()
-%Pression dans le cylindre d'une audi A4 lors d'un cycle
+%Pression lors d'un cycle
 
 gamma=1.3;
 D=79.5;
@@ -10,17 +10,17 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15))*21/100; %1650 kJ par kg d'air (environ 21% en masse du gaz dans le cylindre) 
+Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15))*21/100;
 h=4*pi/400;
 
 theta=linspace(-2*pi,2*pi,401);
 P=zeros(1,401);
 C1=P0*Vmax^gamma;
-i=1;
 
+for i=1:401
 while(-2*pi<=theta(i) && theta(i)<=-pi)
     P(i)=P0;
-    a=i;
+    a=i
     i=i+1;
 end
 deltatheta=40*pi/180;
@@ -28,7 +28,7 @@ thetad=-15*pi/180;
 
 while(-pi<=theta(i) && theta(i)<=thetad);   
 P(i)=C1/((Vc/2)*(1-cos(theta(i))+beta-sqrt(beta^2-(sin(theta(i))*sin(theta(i)))))+Vc/(tau-1))^gamma;
-b=i;
+b=i
 i=i+1;
 end
 
@@ -36,7 +36,7 @@ while (theta(i)<=thetad+deltatheta && theta(i)>=thetad)
 K1= f(theta(i-1),P(i-1));
 K2= f(theta(i-1)+h/2,P(i-1)*h/2);
 P(i)= P(i-1)+(h/2)*(K1+K2);
-c=i;
+c=i
 i=i+1;
 end
 C2=P(i-1)*((Vc/2)*(1-cos(theta(i-1))+beta-sqrt(beta^2-(sin(theta(i-1))^2)))+Vc/(tau-1))^gamma;
@@ -48,11 +48,13 @@ i=i+1;
 end
 Pech=P(i-1);
 
-k=1.65;
+k=1.5;
 while(pi<=theta(i) && theta(i)<2*pi)
     P(i)=P0+(Pech-P0)*exp(-k*theta(i));
     e=i;
     i=i+1;
+end
+
 end
 
 for i=1:401
@@ -70,7 +72,6 @@ hold on;
 plot(theta(d:e),P(d:e),'black');
 hold on;
 
-title('Pression dans le cylindre en fonction de l angle du vilebrequin')
 legend('Admission','Compression','Explosion','Détente','Echappement');
 xlabel('theta[rad]');
 ylabel('p[bar]');
