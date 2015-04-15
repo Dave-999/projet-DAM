@@ -61,64 +61,74 @@ Le fonctionnement d'un moteur à explosion repose sur la conversion du mouvement
 %, une recherche personnelle est nécessaire. Il dépend de la nature
 %du carburant utilisé, essence ou diesel.\\
 
-Commençons par représenter le mécanisme qui nous intéresse: un système regroupant piston, bielle et manivelle. Cela est montré à la figure 1. \\
-
 \begin{figure}	
 	\center
 	\includegraphics[scale=0.8]{Dessin.jpg}
 	\caption{Piston, bielle et manivelle}
 \end{figure}
 
-Pour obtenir des résultats chiffrés, nous devons fixer les différentes longueurs. Comme dit précédemment, nous traitons ici de pièces provenant d'une Audi A4. Nous connaissons l'alésage de ses cylindres, D, et la course d'un piston, égale au double de la longueur R de la manivelle. Ces distances nous ont été fournies dans un document mis à disposition sur le site du cours. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
+Le mécanisme qui nous intéresse est un système regroupant piston, bielle et manivelle (voir figure 1). Notre groupe ayant reçu le vilebrequin d'une Audi A4 lors des séances de mesures, nous traiterons ici en particulier du moteur de cette voiture. De nos mesures, nous avons pu déduire la longueur R de la manivelle. Cette distance est égale à la moitié de la course du piston. Les groupes ?? et ?? nous ont donné respectivement la longueur de la bielle, L, et celles des axes du piston (celui ci a en effet une forme elliptique dans notre cas). Le grand axe du piston est égal à l'alésage D des cylindres. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
 $$V_c =\frac{\pi D^2 R}{2}$$
 
-En multipliant ce volume par quatre, le nombre de cylindres, nous obtenons bien la cylindrée du moteur. La longueur de la bielle, L, est quant à elle obtenue grâce à la coopération du groupe qui a hérité de la pièce durant les séances de mesures. Pour finir, ne connaissant pas précisément le modèle de la voiture, nous ne pouvons qu'estimer le taux de compression qui, rappelons nous, est le rapport du volume de la chambre de combustion lorsque le piston est au point minimum (en bas) sur le volume au point maximum (en haut). Une voiture dont le moteur fonctionne au diesel, a un taux de compression assez haut. Pour une audi A4, il avoisine 19.5 dans le cas d'une cylindrée égale à 1896 (comme pour la série 
+En multipliant ce volume par quatre, le nombre de cylindres, nous obtenons la cylindrée du moteur. Les valeurs réelles de R, D et $V_c$ nous ont été fournies dans un document annexe. Nous utiliserons ces données pour bénéficier d'une plus grande précision.\\
+
+Pour finir, ne connaissant pas précisément le modèle de la voiture, nous ne pouvons qu'estimer le taux de compression qui, rappelons nous, est le rapport du volume de la chambre de combustion lorsque le piston est au point minimum (en bas) sur le volume au point maximum (en haut). Une voiture dont le moteur fonctionne au diesel, a un taux de compression assez haut. Pour une audi A4, il avoisine 19.5 dans le cas d'une cylindrée égale à 1896 (comme pour la série 
 B5\footnote{\url{http://www.auto-data.net/en/?f=showCar&car_id=4416}}). Le résumé des mesures se trouve dans le tableau 1.
 
 \begin{figure}[h]
 \centering
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|c|c|c|}
   \hline
-  Longueur mesurée & Abréviation & Mesure\\
+  Longueur mesurée & Abréviation & Mesure & Distance réelle\\
   \hline
-  Diamètre du cylindre & D & $79.5mm$ \\
-  Rayon de manivelle & R & $47.75mm$\\
-  Longueur de la bielle & L & $199.5mm$\\
-  Cylindrée unitaire & $V_c$  & $474cc$\\
-  Taux de compression & $\tau$ & $19.5$\\
+  Grand axe du piston & D & $79.4mm$ & $79.5mm$ \\
+  Rayon de manivelle & R & $47mm$ & $47.75mm$\\
+  Longueur de la bielle & L & / & $199.5mm$\\
+  Cylindrée unitaire & $V_c$  & $465cc$ & $474cc$\\
+  Taux de compression & $\tau$ & / & $19.5$\\
   \hline
 \end{tabular}
 \caption{Les différentes mesures}
 \end{figure}
 
-\section{Evolution de la pression}
-2. Calculez l’évolution de la pression dans le cylindre en intégrant numériquement
-la relation (8). Pour la phase de combustion, utilisez un angle de démarrage de
-15
-o
-avant le PMH et une durée de
-40
-o
-. L’énergie apportée par la combustion dé-
-pend de la nature du combustible. Pour un moteur à essence prenez
-2800
-kJ=kg
-.
-Pour un moteur diesel, prenez
-1650
-kJ=kg
-. Comme il s’agit d’un apport de cha-
-leur, la masse de référence est celle de l’air dans le cylindre.
-2800
-kJ=kg
-corres-
-pond donc à
-2800
-kJ
-par kilogramme d’air dans le cylindre. Le gaz parcourant
-le cycle est supposé diatomique avec une valeur du coefficient isentropique,
-,
-de 1.3 pour tenir compte de l’effet de la température sur les chaleurs massiques.
+\section{Evolution de la pression dans le cylindre}
+%2. Calculez l’évolution de la pression dans le cylindre en intégrant numériquement
+%la relation (8). Pour la phase de combustion, utilisez un angle de démarrage de
+1%5
+%o
+%avant le PMH et une durée de
+%40
+%o
+%. L’énergie apportée par la combustion dé-
+%pend de la nature du combustible. Pour un moteur à essence prenez
+%2800
+%kJ=kg
+%.
+%Pour un moteur diesel, prenez
+%1650
+%kJ=kg
+%. Comme il s’agit d’un apport de cha-
+%leur, la masse de référence est celle de l’air dans le cylindre.
+%2800
+%kJ=kg
+%corres-
+%pond donc à
+%2800
+%kJ
+%par kilogramme d’air dans le cylindre. Le gaz parcourant
+%le cycle est supposé diatomique avec une valeur du coefficient isentropique,
+%,
+%de 1.3 pour tenir compte de l’effet de la température sur les chaleurs massiques.
+
+Nous pouvons à présent analyser l'évolution de la pression dans le cylindre lors des différentes phases du moteur. Il est judicieux d'utiliser l'angle du vilebrequin $\theta$ comme variable de la fonction de pression, qui sera alors périodique de période 4$\pi$ (deux tours de vilebrequin). En partant de l'équation bien connue du premier principe de la thermodynamique nous pouvons la diviser par la différentielle de l'angle du vilebrequin, d$\theta$, et arriver sous forme simplifiée à
+$$\frac{dp}{d\theta}=-\gamma\frac{p}{V}\frac{dV}{d\theta}+(\gamma - 1) \frac{1}{V}\frac{dQ}{d\theta}$$
+Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $1650[kJ/kg] V_{max} \rho_{O_2}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où k=1.65 pour que la pression retombe à 1 bar après une rotation du vilebrequin d'approximativement 30°.
+
+\begin{figure}	
+	\center
+	\includegraphics[scale=0.3]{Pression.jpg}
+	\caption{Pression lors d'un cycle}
+\end{figure}
 
 \section{Efforts sur la bielle}
 3. Calculez ensuite les efforts sur la bielle en fonction de l’angle de vilebrequin.
@@ -143,3 +153,4 @@ Code matlab
 Optionnel
 
 \end{document}
+
