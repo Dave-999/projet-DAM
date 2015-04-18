@@ -48,7 +48,7 @@
 
 \chapter{Réponse aux questions}
 
-Le fonctionnement d'un moteur à explosion repose sur la conversion du mouvement alternatif du piston en rotation du vilebrequin. Cela se fait par l'intermédiaire d'une bielle. Cette pièce, répétant un cycle à raison de plusieurs milliers de fois par minute, subit des forces conséquentes. Il est donc primordial d'en faire l'analyse afin de prévoir sa forme optimale et les efforts maximaux à devoir supporter. Nous nous intéresserons ici au moteur d'une Audi A4, dont le vilebrequin nous a été confié lors des séances de mesures.
+Le fonctionnement d'un moteur à explosion repose sur la conversion du mouvement alternatif du piston en rotation du vilebrequin. Cela se fait par l'intermédiaire d'une bielle. Cette pièce, répétant un cycle à raison de plusieurs milliers de fois par minute, subit des forces conséquentes. Il est donc primordial d'en faire l'analyse afin de prévoir sa forme optimale et les efforts maximaux à devoir supporter. 
 
 \section{Mesures}
 %1. Sur base des mesures réalisées au laboratoire sur votre pièce et les pièce associée,
@@ -122,7 +122,7 @@ B5\footnote{\url{http://www.auto-data.net/en/?f=showCar&car_id=4416}}). Le résu
 
 Nous pouvons à présent analyser l'évolution de la pression dans le cylindre lors des différentes phases du moteur. Il est judicieux d'utiliser l'angle du vilebrequin $\theta$ comme variable de la fonction de pression, qui sera alors périodique de période 4$\pi$ (deux tours de vilebrequin). En partant de l'équation bien connue du premier principe de la thermodynamique nous pouvons la diviser par la différentielle de l'angle du vilebrequin, d$\theta$, et arriver sous forme simplifiée à
 $$\frac{dp}{d\theta}=-\gamma\frac{p}{V}\frac{dV}{d\theta}+(\gamma - 1) \frac{1}{V}\frac{dQ}{d\theta}$$
-Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $1650[kJ/kg] V_{max} \rho_{O_2}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où k=1.65 pour que la pression retombe à 1 bar après une rotation du vilebrequin d'approximativement 30°.
+Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $1650[kJ/kg] * V_{max} * \rho_{O_2}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où k=1.65 pour que la pression retombe à 1 bar après une rotation du vilebrequin d'approximativement 30°.
 
 \begin{figure}	
 	\center
