@@ -1,4 +1,4 @@
-function [] = dam()
+function [] = pression()
 %Pression dans le cylindre d'une audi A4 lors d'un cycle
 
 gamma=1.3;
