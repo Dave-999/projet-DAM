@@ -109,12 +109,17 @@ Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégre
 
 \section{Justification de la forme de la bielle}
 4. Justifiez la forme en "I" du corps de la bielle
-
+Tout d'abord, deux types de flambage sont possibles : flambage longitudinal et flambage transversal. Dans le cas de la bielle, le flambage transversal apparait plus facilement que le flambage longitudinal (à vérifier). Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance : Plus le corps de la bielle est large, plus elle sera résistante mais plus lourde aussi. La configuration en I de la bielle permet une grande résistance au flambage tout en conservant une masse moins élevée. On peut faire le parallèle entre la section de la bielle et les poutrelles IPN, possédant elles aussi une section en I. Si l'on compare deux poutrelles de section équivalente, l'une en I l'autre de section carrée, on s'aperçoit que l'IPN est 15 fois plus performante (à vérifier, je vous montrerai comment je tombe dessus et vous me direz ce que vous en pensez).
 \section{Dimensionnement de la bielle}
 5. Dimensionnez la section de la bielle (efforts de flambage). A nouveau, une re-
 cherche personnelle sera nécessaire pour faire le lien entre les forces évaluées
 et la forme de la bielle. Comparez vos calculs aux mesures faites sur les pièces
 réelles.
+Le risque de flambage sera accru lorsque la bielle est longue et de faible section.
+On voit sur ce graphe (insérer graphe page 24) qu'à 5400 tours/minute la bielle subit une force maximale lors du cycle de 10.000 Newtons.
+(1ere possibilité :)Grâce à Wikipédia (<-- à changer), on obtient la formule d'Euler : F = $\frac{\pi^2 *E*I}{(l_k)^2}$ \\
+où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. En admettant que la bielle a été obtenue par moulage, son module de Young vaut 170.000 MPa.
+
 
 \chapter{Annexe}
 Code matlab
