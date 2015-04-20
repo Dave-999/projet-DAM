@@ -10,7 +10,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15))*21/100; %1650 kJ par kg d'air (environ 21% en masse du gaz dans le cylindre) 
+Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15)); %1650 kJ par kg d'air
 h=4*pi/400;
 
 theta=linspace(-2*pi,2*pi,401);
@@ -87,7 +87,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15))*21/100;
+Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15));
 h=4*pi/400;
 deltatheta=40*pi/180;
 thetad=-15*pi/180;
