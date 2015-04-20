@@ -1,5 +1,5 @@
 function [] = dam()
-
+%/!\Les graphes ne ressemblent tjs pas à ceux des slides...
 % Partie PRESSIONS
 
 gamma=1.3;
@@ -60,16 +60,16 @@ for i=1:401
 P(i)=P(i)/100000;
 end
 
-figure,
-plot(theta(1:a),P(1:a),'blue');
+figure();
+plot(theta(1:a),P(1:a),'blue','linewidth',2);
 hold on;
-plot(theta(a:b),P(a:b),'red');
+plot(theta(a:b),P(a:b),'red','linewidth',2);
 hold on;
-plot(theta(b:c),P(b:c),'green');
+plot(theta(b:c),P(b:c),'green','linewidth',2);
 hold on;
-plot(theta(c:d),P(c:d),'yellow');
+plot(theta(c:d),P(c:d),'yellow','linewidth',2);
 hold on;
-plot(theta(d:e),P(d:e),'black');
+plot(theta(d:e),P(d:e),'black','linewidth',2);
 hold off;
 
 title('Evolution de la pression dans le cylindre en fonction de l angle du vilebrequin')
@@ -104,10 +104,10 @@ for i=1:401
     FteteElevee(i) = -pi*D^2/4*P(i)+(Mpiston+Mbielle)*R*Welevee^2*cos(theta(i));
 end
 
-figure,
-plot(theta,FpiedNormale,'blue');
+figure();
+plot(theta,FpiedNormale,'blue','linewidth',2);
 hold on;
-plot(theta,FpiedElevee,'red');
+plot(theta,FpiedElevee,'red','linewidth',2);
 hold off;
 
 title('Evolution des efforts sur le pied de bielle en fonction de l angle du vilebrequin')
@@ -115,10 +115,10 @@ legend('Vitesse normale(2500 rpm)','Vitesse élevée(4000 rpm)');
 xlabel('theta[rad]');
 ylabel('F[N]');
 
-figure,
-plot(theta,FteteNormale,'blue');
+figure();
+plot(theta,FteteNormale,'blue','linewidth',2);
 hold on;
-plot(theta,FteteElevee,'red');
+plot(theta,FteteElevee,'red','linewidth',2);
 hold off;
 
 title('Evolution des efforts sur la tête de bielle en fonction de l angle du vilebrequin')
