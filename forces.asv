@@ -1,6 +1,0 @@
-function [] = forces()
-
-Fpied = pi*D^2/4*P
-Ftete = 
-
-end

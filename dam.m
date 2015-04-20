@@ -1,5 +1,6 @@
-function [] = pression()
-%Pression dans le cylindre d'une audi A4 lors d'un cycle
+function [] = dam()
+
+% Partie PRESSIONS
 
 gamma=1.3;
 D=79.5;
@@ -59,7 +60,8 @@ for i=1:401
 P(i)=P(i)/100000;
 end
 
-plot(theta(1:a),P(1:a));
+figure,
+plot(theta(1:a),P(1:a),'blue');
 hold on;
 plot(theta(a:b),P(a:b),'red');
 hold on;
@@ -68,12 +70,61 @@ hold on;
 plot(theta(c:d),P(c:d),'yellow');
 hold on;
 plot(theta(d:e),P(d:e),'black');
-hold on;
+hold off;
 
-title('Pression dans le cylindre en fonction de l angle du vilebrequin')
+title('Evolution de la pression dans le cylindre en fonction de l angle du vilebrequin')
 legend('Admission','Compression','Explosion','Détente','Echappement');
 xlabel('theta[rad]');
 ylabel('p[bar]');
+
+% Partie FORCES
+
+for i=1:401
+P(i)=P(i)*100000; % conversion en Pascal
+end
+
+Wnormale = 2500/60; % 2500 rpm
+Welevee = 4000/60; % 4000 rpm
+
+Mpiston = 0.304; % autre masse possible : 0.3725 kg
+Mbielle = 0.5915; % sans les vis
+
+D = 0.0795; % 79.5mm
+R = 0.04775; % 47.75mm
+
+FpiedNormale = zeros(1,401);
+FpiedElevee = zeros(1,401);
+FteteNormale = zeros(1,401);
+FteteElevee = zeros(1,401);
+
+for i=1:401
+    FpiedNormale(i) = pi*D^2/4*P(i)-Mpiston*R*Wnormale^2*cos(theta(i));
+    FpiedElevee(i) = pi*D^2/4*P(i)-Mpiston*R*Welevee^2*cos(theta(i));
+    FteteNormale(i) = -pi*D^2/4*P(i)+(Mpiston+Mbielle)*R*Wnormale^2*cos(theta(i));
+    FteteElevee(i) = -pi*D^2/4*P(i)+(Mpiston+Mbielle)*R*Welevee^2*cos(theta(i));
+end
+
+figure,
+plot(theta,FpiedNormale,'blue');
+hold on;
+plot(theta,FpiedElevee,'red');
+hold off;
+
+title('Evolution des efforts sur le pied de bielle en fonction de l angle du vilebrequin')
+legend('Vitesse normale(2500 rpm)','Vitesse élevée(4000 rpm)');
+xlabel('theta[rad]');
+ylabel('F[N]');
+
+figure,
+plot(theta,FteteNormale,'blue');
+hold on;
+plot(theta,FteteElevee,'red');
+hold off;
+
+title('Evolution des efforts sur la tête de bielle en fonction de l angle du vilebrequin')
+legend('Vitesse normale(2500 rpm)','Vitesse élevée(4000 rpm)');
+xlabel('theta[rad]');
+ylabel('F[N]');
 
 end
 
@@ -87,7 +138,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15));
+Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15)); % PROBLEME UNITE !!! Vmax en m³ !!!
 h=4*pi/400;
 deltatheta=40*pi/180;
 thetad=-15*pi/180;
