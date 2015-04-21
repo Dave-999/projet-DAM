@@ -11,7 +11,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=10^5;
-Qtot=10^-6*Vmax*1650/1000*(P0*32/(8.3145*298.15)); %1650 kJ par kg d'air
+Qtot=10^-6*Vmax*1650*10^3*(P0*32/(8.3145*298.15)); %1650 kJ par kg d'air
 h=4*pi/400;
 
 theta=linspace(-2*pi,2*pi,401);
