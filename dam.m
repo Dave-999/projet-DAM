@@ -1,17 +1,17 @@
 function [] = dam()
-%/!\Les graphes ne ressemblent tjs pas à ceux des slides...
+
 % Partie PRESSIONS
 
 gamma=1.3;
-D=79.5;
-R=47.75;
-L=199.5;
-Vc=474;
+D=79.5*10^-3;
+R=47.75*10^-3;
+L=199.5*10^-3;
+Vc=474*10^-6;
 tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
-P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15)); %1650 kJ par kg d'air
+P0=10^5;
+Qtot=10^-6*Vmax*1650/1000*(P0*32/(8.3145*298.15)); %1650 kJ par kg d'air
 h=4*pi/400;
 
 theta=linspace(-2*pi,2*pi,401);
@@ -57,7 +57,7 @@ while(pi<=theta(i) && theta(i)<2*pi)
 end
 
 for i=1:401
-P(i)=P(i)/100000;
+P(i)=P(i)/10^5;
 end
 
 figure();
@@ -72,7 +72,7 @@ hold on;
 plot(theta(d:e),P(d:e),'black','linewidth',2);
 hold off;
 
-title('Evolution de la pression dans le cylindre en fonction de l angle du vilebrequin')
+title('Pression dans le cylindre en fonction de l''angle du vilebrequin')
 legend('Admission','Compression','Explosion','Détente','Echappement');
 xlabel('theta[rad]');
 ylabel('p[bar]');
@@ -80,17 +80,17 @@ ylabel('p[bar]');
 % Partie FORCES
 
 for i=1:401
-P(i)=P(i)*100000; % conversion en Pascal
+P(i)=P(i)*10^5; % conversion en Pascal
 end
 
-Wnormale = 2500/60; % 2500 rpm
-Welevee = 4000/60; % 4000 rpm
+Wnormale = 2500/60; % 2500rpm
+Welevee = 4000/60; % 4000rpm
 
-Mpiston = 0.304; % autre masse possible : 0.3725 kg
-Mbielle = 0.5915; % sans les vis
+Mpiston = 304*10^-3; % masses possibles : 304g et 372.5g
+Mbielle = 591.5*10^-3; % sans les vis : 591.5g
 
-D = 0.0795; % 79.5mm
-R = 0.04775; % 47.75mm
+D = 79.5*10^-3; % 79.5mm
+R = 47.75*10^-3; % 47.75mm
 
 FpiedNormale = zeros(1,401);
 FpiedElevee = zeros(1,401);
@@ -107,22 +107,22 @@ end
 figure();
 plot(theta,FpiedNormale,'blue','linewidth',2);
 hold on;
-plot(theta,FpiedElevee,'red','linewidth',2);
+plot(theta,FteteNormale,'red','linewidth',2);
 hold off;
 
-title('Evolution des efforts sur le pied de bielle en fonction de l angle du vilebrequin')
-legend('Vitesse normale(2500 rpm)','Vitesse élevée(4000 rpm)');
+title('Efforts sur la bielle en fonction de l''angle du vilebrequin (\omega=2500rpm)');
+legend('Efforts sur le pied de bielle','Efforts sur la tête de bielle');
 xlabel('theta[rad]');
 ylabel('F[N]');
 
 figure();
-plot(theta,FteteNormale,'blue','linewidth',2);
+plot(theta,FpiedElevee,'blue','linewidth',2);
 hold on;
 plot(theta,FteteElevee,'red','linewidth',2);
 hold off;
 
-title('Evolution des efforts sur la tête de bielle en fonction de l angle du vilebrequin')
-legend('Vitesse normale(2500 rpm)','Vitesse élevée(4000 rpm)');
+title('Efforts sur la bielle en fonction de l''angle du vilebrequin (\omega=4000rpm)');
+legend('Efforts sur le pied de bielle','Efforts sur la tête de bielle');
 xlabel('theta[rad]');
 ylabel('F[N]');
 
@@ -138,7 +138,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=100000;
-Qtot=Vmax*1650/1000*(P0*32/(8.3145*298.15)); % PROBLEME UNITE !!! Vmax en m³ !!!
+Qtot=10^-6*Vmax*1650/1000*(P0*32/(8.3145*298.15)); % transformer Vmax en m³
 h=4*pi/400;
 deltatheta=40*pi/180;
 thetad=-15*pi/180;
