@@ -83,8 +83,8 @@ for i=1:801
 P(i)=P(i)*10^5; % conversion en Pascal
 end
 
-Wnormale = 2500/60; % 2500rpm
-Welevee = 4000/60; % 4000rpm
+Wnormale = 2500*2*pi/60; % 2500rpm
+Welevee = 4000*2*pi/60; % 4000rpm
 
 Mpiston = 304*10^-3; % masses possibles : 304g et 372.5g
 Mbielle = 591.5*10^-3; % sans les vis : 591.5g
