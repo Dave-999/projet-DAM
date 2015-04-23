@@ -43,11 +43,11 @@ end
 C2=P(i-1)*((Vc/2)*(1-cos(theta(i-1))+beta-sqrt(beta^2-(sin(theta(i-1))^2)))+Vc/(tau-1))^gamma;
 
 while(thetad+deltatheta<=theta(i) && theta(i)<=pi);   
-P(i)=C2/((((Vc/2)*(1-cos(theta(i))+beta-sqrt(beta^2-(sin(theta(i))^2)))+Vc/(tau-1)))^gamma);
+P(i)=C2/(((Vc/2)*(1-cos(theta(i))+beta-sqrt(beta^2-(sin(theta(i))^2)))+Vc/(tau-1))^gamma);
 d=i;
 i=i+1;
 end
-Pech=P(i-1)
+Pech=P(i-1);
 
 k=2.5;
 while(pi<=theta(i) && theta(i)<2*pi)
@@ -138,7 +138,7 @@ tau=19.5;
 Vmax=(tau/(tau-1))*Vc;
 beta=L/R;
 P0=10^5;
-Qtot=Vmax*1650*(P0/(8.3145*298.15))*(32*21/100+28*78/100+40/100) % transformer Vmax en m³
+Qtot=Vmax*1650*(P0/(8.3145*298.15))*(32*21/100+28*78/100+40/100);
 h=4*pi/400;
 
 deltatheta=40*pi/180;
