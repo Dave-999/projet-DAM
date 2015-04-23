@@ -99,10 +99,19 @@ FteteElevee = zeros(1,801);
 
 for i=1:801
     FpiedNormale(i) = pi*(D^2)/4*P(i)-Mpiston*R*Wnormale^2*cos(theta(i));
-    FpiedElevee(i) = pi*(D^2)/4*P(i)-Mpiston*R*Welevee^2*cos(theta(i));
     FteteNormale(i) = -pi*(D^2)/4*P(i)+(Mpiston+Mbielle)*R*Wnormale^2*cos(theta(i));
+    FpiedElevee(i) = pi*(D^2)/4*P(i)-Mpiston*R*Welevee^2*cos(theta(i));
     FteteElevee(i) = -pi*(D^2)/4*P(i)+(Mpiston+Mbielle)*R*Welevee^2*cos(theta(i));
 end
+
+fprintf('MaxFpiedNormale = %d\n', max(FpiedNormale));
+fprintf('MinFpiedNormale = %d\n', min(FpiedNormale));
+fprintf('MaxFteteNormale = %d\n', max(FteteNormale));
+fprintf('MinFteteNormale = %d\n', min(FteteNormale));
+fprintf('MaxFpiedElevee = %d\n', max(FpiedElevee));
+fprintf('MinFpiedElevee = %d\n', min(FpiedElevee));
+fprintf('MaxFteteElevee = %d\n', max(FteteElevee));
+fprintf('MinFteteElevee = %d\n', min(FteteElevee));
 
 figure();
 plot(theta,FpiedNormale,'blue','linewidth',2);
