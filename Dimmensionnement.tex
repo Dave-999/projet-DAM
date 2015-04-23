@@ -119,6 +119,34 @@ Voici les graphes représentant les efforts sur la bielle en fonction de l'angle
 \caption{Efforts lors d'un cycle, $\omega=4000rpm$}
 \end{figure}
 
+Les efforts maximaux et minimaux, qui s'exercent sur la bielle à ses deux extréités (pied et tête) dans le cas d'une vitesse normale de $2500rpm$, sont repris dans le tableau ci-dessous: \\
+
+\begin{center}
+\begin{tabular}{|c||c|c|}
+\hline 
+\ & Forces maximales [kN] & Forces minimales [kN] \\ 
+\hline 
+Pied de la bielle & 50.225 & -0.995 \\ 
+\hline 
+Tête de la bielle & 2.931 & -48.313 \\ 
+\hline 
+\end{tabular} \\
+\end{center}
+
+Les efforts maximaux et minimaux, qui s'exercent sur la bielle à ses deux extréités (pied et tête) dans le cas d'une vitesse élevée de $4000rpm$, sont repris dans le tableau ci-dessous: \\
+
+\begin{center}
+\begin{tabular}{|c||c|c|}
+\hline 
+\ & Forces maximales [kN] & Forces minimales [kN] \\ 
+\hline 
+Pied de la bielle & 48.692 & -2.547 \\ 
+\hline 
+Tête de la bielle &  7.503 & -43.798 \\ 
+\hline 
+\end{tabular} \\
+\end{center}
+
 \section{Justification de la forme de la bielle}
 4. Justifiez la forme en "I" du corps de la bielle
 Tout d'abord, deux types de flambage sont possibles : flambage longitudinal et flambage transversal. Dans le cas de la bielle, le flambage transversal apparait plus facilement que le flambage longitudinal (à vérifier). Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance : Plus la section du corps de la bielle est large, plus elle sera résistante mais plus lourde aussi. La configuration en I de la bielle permet une résistance élevée au flambage tout en conservant une masse moins importante. Grâce à la formule d'Euler : $F_crit$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la barre, on peut comparer la force critique d'une poutre profilée en I et celle d'une poutre de section carrée pour une section d'aire équivalente. Le module de Young étant propre au matériau et $l_k$ le même pour les deux bielles, le seul moyen de maximiser la force à partir de laquelle la bielle flambera est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée I : $\frac{t}{12}*h^3 * \frac{1+3s}{h}$ où t est la largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme.\\

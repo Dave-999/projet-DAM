@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.10.13)  23 APR 2015 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.10.13)  23 APR 2015 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1679,23 +1679,33 @@ File: effort_4000rpm.jpg Graphic file (type jpg)
 Package pdftex.def Info: effort_4000rpm.jpg used on input line 118.
 (pdftex.def)             Requested size: 394.16994pt x 295.10048pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-[4 <./effort_2500rpm.jpg> <./effort_4000rpm.jpg>] [5]
+[4 <./effort_2500rpm.jpg> <./effort_4000rpm.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
+
+ []
+
+[5]
 Chapitre 2.
 [6
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
  (./Dimmensionnement.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `Dimmensionnement.out' has not changed.
 (rerunfilecheck)             Checksum: 0415E20974B32BF08F1D3835B7BB5D57;465.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
  ) 
 Here is how much of TeX's memory you used:
  32643 strings out of 493107
@@ -1720,7 +1730,7 @@ onts/type1/public/cm-super/sfcc1200.pfb><c:/texlive/2014/texmf-dist/fonts/type1
 -super/sfrm1000.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfr
 m1200.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
 <c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Dimmensionnement.pdf (7 pages, 309619 bytes).
+Output written on Dimmensionnement.pdf (7 pages, 310581 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams
