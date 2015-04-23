@@ -51,23 +51,14 @@
 Le fonctionnement d'un moteur à explosion repose sur la conversion du mouvement alternatif du piston en rotation du vilebrequin. Cela se fait par l'intermédiaire d'une bielle. Cette pièce, répétant un cycle à raison de plusieurs milliers de fois par minute, subit des forces conséquentes. Il est donc primordial d'en faire l'analyse afin de prévoir sa forme optimale et les efforts maximaux à devoir supporter. 
 
 \section{Mesures}
-%1. Sur base des mesures réalisées au laboratoire sur votre pièce et les pièce associée,
-%déterminez les grandeurs géométriques du moteur :
-%D;R;L;V
-%c
-%. Pour le taux de
-%compression,
-%$\tau$
-%, une recherche personnelle est nécessaire. Il dépend de la nature
-%du carburant utilisé, essence ou diesel.\\
 
 \begin{figure}	
 	\center
-	\includegraphics[scale=0.7]{Dessin.jpg}
+	\includegraphics[scale=0.75]{Dessin.jpg}
 	\caption{Piston, bielle et manivelle}
 \end{figure}
 
-Le mécanisme qui nous intéresse est un système regroupant piston, bielle et manivelle (voir figure 1.1). Notre groupe ayant reçu le vilebrequin d'une Audi A4 lors des séances de mesures, nous traiterons ici en particulier du moteur de cette voiture. De nos mesures, nous avons pu déduire la longueur R de la manivelle. Cette distance est égale à la moitié de la course du piston. Les groupes 12 et 16 nous ont donné respectivement la longueur de la bielle, L, et celles des axes du piston (celui ci a en effet une forme elliptique dans notre cas). Le grand axe du piston est égal à l'alésage D des cylindres. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
+Le mécanisme qui nous intéresse est un système regroupant piston, bielle et manivelle (voir figure 1.1). Notre groupe ayant reçu le vilebrequin d'une Audi A4 lors des séances de mesures, nous traiterons ici en particulier du moteur de cette voiture. De nos mesures, nous avons pu déduire la longueur R de la manivelle. Cette distance est égale à la moitié de la course du piston. Les groupes 12 et 16 nous ont donné respectivement la longueur de la bielle, L, et les longueurs des axes du piston (celui ci a en effet une forme elliptique dans notre cas). Le grand axe du piston est égal à l'alésage D des cylindres. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
 $$V_c =\frac{\pi D^2 R}{2}$$
 
 En multipliant ce volume par quatre, le nombre de cylindres, nous obtenons la cylindrée du moteur. Les valeurs réelles de R, D et $V_c$ nous ont été fournies dans un document annexe. Nous utiliserons ces données pour bénéficier d'une plus grande précision.\\
@@ -99,13 +90,34 @@ Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégre
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.7]{pression.jpg}
+	\includegraphics[scale=0.75]{pression.jpg}
 	\caption{Pression lors d'un cycle}
 \end{figure}
 
 \section{Efforts sur la bielle}
 
+Le bilan des efforts sur la tête et le pied de bielle se mesure avec les deux formules ci-dessous. 
 
+\begin{center}
+$F_{pied} = \frac{\pi \cdot D^2}{4}p(\theta) -  m_{piston}R\omega^2 \cos(\theta)  $ \\
+\end{center}
+\begin{center}
+$F_{tete} = -\frac{\pi \cdot D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(\theta)$ 
+\end{center}
+
+Voici les graphes représentant les efforts sur la bielle en fonction de l'angle du vilbrequin, à deux vitesses angulaires précises ($2500rpm$ et $4000rpm$):
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.7]{effort_2500rpm.jpg}
+\caption{Efforts lors d'un cycle, $\omega=2500rpm$}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.7]{effort_4000rpm.jpg}
+\caption{Efforts lors d'un cycle, $\omega=4000rpm$}
+\end{figure}
 
 \section{Justification de la forme de la bielle}
 4. Justifiez la forme en "I" du corps de la bielle
