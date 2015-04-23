@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.10.13)  23 APR 2015 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2014.10.13)  23 APR 2015 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1688,30 +1688,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
-
- []
-
 [5]
 Chapitre 2.
 [6
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (./Dimmensionnement.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `Dimmensionnement.out' has not changed.
 (rerunfilecheck)             Checksum: 0415E20974B32BF08F1D3835B7BB5D57;465.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 32643 strings out of 493107
- 652593 string characters out of 6138432
+ 32645 strings out of 493107
+ 652616 string characters out of 6138432
  740187 words of memory out of 5000000
- 35581 multiletter control sequences out of 15000+600000
+ 35583 multiletter control sequences out of 15000+600000
  19175 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,69p,10354b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1730,7 +1725,7 @@ onts/type1/public/cm-super/sfcc1200.pfb><c:/texlive/2014/texmf-dist/fonts/type1
 -super/sfrm1000.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfr
 m1200.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
 <c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Dimmensionnement.pdf (7 pages, 310581 bytes).
+Output written on Dimmensionnement.pdf (7 pages, 310096 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams
