@@ -99,10 +99,10 @@ Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégre
 Le bilan des efforts sur la tête et le pied de bielle se mesure avec les deux formules ci-dessous. 
 
 \begin{center}
-$F_{pied} = \frac{\pi D^2}{4}p(\theta) -  m_{piston}R\omega^2 \cos(\theta)  $ \\
+$F_{pied} = \frac{\pi \cdot D^2}{4}p(\theta) -  m_{piston}R\omega^2 \cos(\theta)  $ \\
 \end{center}
 \begin{center}
-$F_{tete} = -\frac{\pi D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(\theta)$ 
+$F_{tete} = -\frac{\pi \cdot D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(\theta)$ 
 \end{center}
 
 Voici les graphes représentant les efforts sur la bielle en fonction de l'angle du vilbrequin, à deux vitesses angulaires précises ($2500rpm$ et $4000rpm$):
@@ -149,13 +149,13 @@ Tête de la bielle &  7.503 & -43.798 \\
 
 \section{Justification de la forme de la bielle}
 
-Tout d'abord, deux types de flambage sont possibles : flambage longitudinal et flambage transversal. Dans le cas de la bielle, le flambage transversal apparait plus facilement que le flambage longitudinal (à vérifier). Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance : Plus la section du corps de la bielle est large, plus elle sera résistante mais plus lourde aussi. La configuration en I de la bielle permet une résistance élevée au flambage tout en conservant une masse moins importante. Grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2EI}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la barre, on peut comparer la force critique d'une poutre profilée en I et celle d'une poutre de section carrée pour une section d'aire équivalente. Le module de Young étant propre au matériau et $l_k$ le même pour les deux bielles, le seul moyen de maximiser la force à partir de laquelle la bielle flambera est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée I : $\frac{t}{12}h^3\frac{1+3s}{h}$ où t est la largeur de l'âme, s, la largeur de la semelle et h, la hauteur de l'âme.
+Tout d'abord, deux types de flambage sont possibles : flambage longitudinal et flambage transversal. Dans le cas de la bielle, le flambage transversal apparait plus facilement que le flambage longitudinal (à vérifier). Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance : Plus la section du corps de la bielle est large, plus elle sera résistante mais plus lourde aussi. La configuration en I de la bielle permet une résistance élevée au flambage tout en conservant une masse moins importante. Grâce à la formule d'Euler : $F_crit$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la barre, on peut comparer la force critique d'une poutre profilée en I et celle d'une poutre de section carrée pour une section d'aire équivalente. Le module de Young étant propre au matériau et $l_k$ le même pour les deux bielles, le seul moyen de maximiser la force à partir de laquelle la bielle flambera est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée I : $\frac{t}{12}*h^3 * \frac{1+3s}{h}$ où t est la largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme.
 
 \section{Dimensionnement de la bielle}
 
 Le risque de flambage sera accru lorsque la bielle est longue et de faible section.
-On voit sur ce graphe (insérer graphe page 24) qu'à $5400rpm$ la bielle subit une force maximale lors du cycle de $10.000 N$.
-En admettant que la bielle ait été obtenue par moulage, son module de Young vaut $170.000 MPa$, 
+On voit sur ce graphe (insérer graphe page 24) qu'à 5400 tours/minute la bielle subit une force maximale lors du cycle de 10.000 Newtons.
+En admettant que la bielle ait été obtenue par moulage, son module de Young vaut 170.000 MPa, 
 
 \chapter{Annexe}
 
