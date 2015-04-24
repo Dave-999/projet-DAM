@@ -79,7 +79,7 @@ B5\footnote{\url{http://www.auto-data.net/en/?f=showCar&car_id=4416}}). Le résu
 
 L'analyse de l'évolution de la pression dans le cylindre se fait grâce à l'équation bien connue du premier principe de la thermodynamique. Divisée par la différentielle de l'angle du vilebrequin, d$\theta$, et simplifiée, nous obtenons:
 $$\frac{dp}{d\theta}=-\gamma\frac{p}{V}\frac{dV}{d\theta}+(\gamma - 1) \frac{1}{V}\frac{dQ}{d\theta}$$
-Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $Q_{tot}=1650[kJ/kg] * V_{max} * \rho_{air}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où $k=2,5$ pour que la pression retombe à 1 bar après une rotation du vilebrequin d'environ 30\degre.
+Nous avons choisi d'utiliser une méthode de Runge-Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $Q_{tot}=1650[kJ/kg] * V_{max} * \rho_{air}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où $k=2,5$ pour que la pression retombe à 1 bar après une rotation du vilebrequin d'environ 30\degre.
 
 \begin{figure}[H]
 	\center
@@ -143,7 +143,7 @@ Tête de la bielle &  7.503 & -43.798 \\
 
 \section{Justification de la forme de la bielle}
 
- Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance. Pour une même forme de section, une augmentation de sa taille va de paire avec une hausse de la résistance et du poids de la bielle. La section profilée en I permet une résistance élevée au flambage tout en conservant une masse moins importante. Nous pouvons déterminer la force critique d'une poutre profilée en I grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. Le module de Young étant propre au matériau et $l_k$ l'entraxe de la bielle, le seul moyen de maximiser la force à partir de laquelle apparaitra le flambage est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée en I : $\frac{t}{6}*h^3*(1+\frac{3s}{h})$ où t est la demi-largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme. Ces distances sont annotées dans le dessin suivant\footnote{\url{http://fr.wikipedia.org/wiki/\%C3\%82me_\%28poutre\%29}}:
+ Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance. Pour une même forme de section, une augmentation de sa taille va de pair avec une hausse de la résistance et du poids de la bielle. La section profilée en I permet une résistance élevée au flambage tout en conservant une masse moins importante. Nous pouvons déterminer la force critique d'une poutre profilée en I grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. Le module de Young étant propre au matériau et $l_k$ l'entraxe de la bielle, le seul moyen de maximiser la force à partir de laquelle apparaitra le flambage est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée en I : $\frac{t}{6}*h^3*(1+\frac{3s}{h})$ où t est la demi-largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme. Ces distances sont annotées dans le dessin suivant\footnote{\url{http://fr.wikipedia.org/wiki/\%C3\%82me_\%28poutre\%29}}:
  \begin{figure}[H]
 \center
 \includegraphics[scale=0.15]{Poutrelle.png}
@@ -173,7 +173,7 @@ Epaisseur de l'âme & 3.8 & 1.98 \\
 \begin{center}
 \begin{tabular}{|c||c|c|}
 \hline 
-\ & Déterminée grâce aux mesures de séance $[mm^2]$ & Dimensionnée (+ Hypothèse que l'épaisseur de la ) $[mm^2]$ \\
+\ & Déterminée grâce aux mesures de séance $[mm^2]$ & Dimensionnée $[mm^2]$ \\
 \hline
 Aire de la section & 200,17  &  47,05 \\
 \end{tabular}
