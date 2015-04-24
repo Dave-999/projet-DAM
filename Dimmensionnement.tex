@@ -1,7 +1,6 @@
 \documentclass[a4paper,oneside,12pt]{report}
 
 \usepackage{custom}
-
 \newcommand{\barg}{\si{\bar}\text{g}} 
 
 \usepackage{fancyhdr} 
@@ -52,8 +51,8 @@
 
 \section{Mesures}
 
-Le mécanisme qui nous intéresse est un système regroupant piston, bielle et manivelle. Notre groupe ayant reçu le vilebrequin d'une Audi A4 lors des séances de mesures, nous traiterons ici en particulier du moteur de cette voiture. De nos mesures, nous avons pu déduire la longueur R de la manivelle. Cette distance est égale à la moitié de la course du piston. Les groupes 12 et 16 nous ont donné respectivement la longueur de la bielle, L, et les longueurs des axes du piston (celui ci a en effet une forme elliptique dans notre cas). Le grand axe du piston est égal à l'alésage D des cylindres. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
-$$V_c =\frac{\pi D^2 R}{2}$$
+Le mécanisme qui nous intéresse est un système regroupant piston, bielle et manivelle. Notre groupe ayant reçu le vilebrequin d'une Audi A4 lors des séances de mesures, nous traiterons ici en particulier du moteur de cette voiture. De nos mesures, nous avons pu déduire la longueur R de la manivelle. Les groupes 12 et 16 nous ont donné respectivement la longueur de la bielle, L, et les longueurs des axes du piston (celui ci a en effet ici une forme elliptique). Le grand axe du piston est égal à l'alésage D des cylindres. Il est possible de trouver la cylindrée unitaire $V_c$ grâce à la formule suivante: 
+$V_c =\frac{\pi D^2 R}{2}$
 
 En multipliant ce volume par quatre, le nombre de cylindres, nous obtenons la cylindrée du moteur. Les valeurs réelles de R, D et $V_c$ nous ont été fournies dans un document annexe. Nous utiliserons ces données pour bénéficier d'une plus grande précision.\\
 
@@ -78,13 +77,13 @@ B5\footnote{\url{http://www.auto-data.net/en/?f=showCar&car_id=4416}}). Le résu
 
 \section{Evolution de la pression dans le cylindre}
 
-Nous pouvons à présent analyser l'évolution de la pression dans le cylindre lors des différentes phases du moteur. Il est judicieux d'utiliser l'angle du vilebrequin $\theta$ comme variable de la fonction de pression, qui sera alors périodique de période 4$\pi$ (deux tours de vilebrequin). En partant de l'équation bien connue du premier principe de la thermodynamique nous pouvons la diviser par la différentielle de l'angle du vilebrequin, d$\theta$, et arriver sous forme simplifiée à
+L'analyse de l'évolution de la pression dans le cylindre se fait grâce à l'équation bien connue du premier principe de la thermodynamique. Divisée par la différentielle de l'angle du vilebrequin, d$\theta$, et simplifiée, nous obtenons:
 $$\frac{dp}{d\theta}=-\gamma\frac{p}{V}\frac{dV}{d\theta}+(\gamma - 1) \frac{1}{V}\frac{dQ}{d\theta}$$
-Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $1650[kJ/kg] * V_{max} * \rho_{air}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où $k=2,5$ pour que la pression retombe à 1 bar après une rotation du vilebrequin d'approximativement 30\degre.
+Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégrer numériquement cette équation. Cela ne se révèle utile que pour la phase de combustion, la seule où il y a un apport de chaleur non négligeable. Celui-ci est égal à $Q_{tot}=1650[kJ/kg] * V_{max} * \rho_{air}$. Les autres transformations sont considérées adiabatiques et la pression est trouvée simplement en considérant $PV^{\gamma}$ constant. L'échappement se fait avec un terme de relaxation $\frac{dp}{d\theta}=-k(p-p_atm)$ où $k=2,5$ pour que la pression retombe à 1 bar après une rotation du vilebrequin d'environ 30\degre.
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.75]{pression.jpg}
+	\includegraphics[scale=0.6]{pression.jpg}
 	\caption{Pression lors d'un cycle}
 \end{figure}
 
@@ -92,30 +91,27 @@ Nous avons choisi d'utiliser une méthode de Runge Kutta d'ordre 2 pour intégre
 
 Le bilan des efforts sur la tête et le pied de bielle se mesure avec les deux formules ci-dessous. 
 
-\begin{center}
-$F_{pied} = \frac{\pi D^2}{4}p(\theta) -  m_{piston}R\omega^2 \cos(\theta)  $ \\
-\end{center}
-\begin{center}
-$F_{tete} = -\frac{\pi D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(\theta)$ 
-\end{center}
+$$F_{pied} = \frac{\pi D^2}{4}p(\theta) -  m_{piston}R\omega^2 \cos(\theta) \qquad
+F_{tete} = -\frac{\pi D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(\theta)$$
 
 Voici les graphes représentant les efforts sur la bielle en fonction de l'angle du vilebrequin, à deux vitesses angulaires précises ($2500rpm$ et $4000rpm$):
 
-\begin{figure}[H]
-\center
-\includegraphics[scale=0.7]{effort_2500rpm.jpg}
-\caption{Efforts lors d'un cycle, $\omega=2500rpm$}
-\end{figure}
 
-\begin{figure}[H]
-\center
-\includegraphics[scale=0.7]{effort_4000rpm.jpg}
+\begin{figure}[h!]
+\hspace{-2cm}
+   \begin{minipage}[b]{0.40\linewidth}
+\includegraphics[scale=0.5]{effort_2500rpm.jpg}
+\caption{Efforts lors d'un cycle, $\omega=2500rpm$}
+   \end{minipage}\hfill
+   \begin{minipage}[b]{0.48\linewidth}   
+\includegraphics[scale=0.5]{effort_4000rpm.jpg}
 \caption{Efforts lors d'un cycle, $\omega=4000rpm$}
+   \end{minipage}
 \end{figure}
 
 Les efforts maximaux et minimaux à ces deux vitesses sont repris dans les tableaux ci-dessous: \\
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
 \begin{tabular}{|c||c|c|}
 \hline 
@@ -130,7 +126,7 @@ Tête de la bielle & 2.931 & -48.313 \\
 \caption{Efforts maximaux et minimaux, $\omega=2500rpm$}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
 \begin{tabular}{|c||c|c|}
 \hline 
@@ -147,16 +143,16 @@ Tête de la bielle &  7.503 & -43.798 \\
 
 \section{Justification de la forme de la bielle}
 
- Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance. Pour une même forme de section, une augmentation de sa taille va de paire avec une hausse de la résistante et du poids de la bielle. La section profilée en I permet une résistance élevée au flambage tout en conservant une masse moins importante. Nous pouvons déterminer la force critique d'une poutre profilée en I grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. Le module de Young étant propre au matériau et $l_k$ l'entraxe de la bielle, le seul moyen de maximiser la force à partir de laquelle il y aura l'apparition du flambage est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée en I : $\frac{t}{6}*h^3*(1+\frac{3s}{h})$ où t est la demi-largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme.
+ Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance. Pour une même forme de section, une augmentation de sa taille va de paire avec une hausse de la résistante et du poids de la bielle. La section profilée en I permet une résistance élevée au flambage tout en conservant une masse moins importante. Nous pouvons déterminer la force critique d'une poutre profilée en I grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. Le module de Young étant propre au matériau et $l_k$ l'entraxe de la bielle, le seul moyen de maximiser la force à partir de laquelle il y aura l'apparition du flambage est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée en I : $\frac{t}{6}*h^3*(1+\frac{3s}{h})$ où t est la demi-largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme. Ces distances sont annotées dans le dessin suivant\footnote{\url{http://fr.wikipedia.org/wiki/\%C3\%82me_\%28poutre\%29}}:
  \begin{figure}[H]
 \center
-\includegraphics[scale=0.1]{Poutrelle.png}
+\includegraphics[scale=0.15]{Poutrelle.png}
 \caption{Poutre profilée en I}
 \end{figure}
 
 \section{Dimensionnement de la bielle}
 
-Il s'agit maintenant de déterminer les dimensions de la section profilée I du corps de la bielle. On sait grâce à la question 3, que la force maximale subie par la bielle au cours d'un cycle vaut 50,225 kN. Cette force étant celle à partir de laquelle la bielle est sujette au flambage, il faut prévoir une marge de sécurité. Nous décidons arbitrairement de prendre 25\% de marge. Grâce à cela, en utilisant la formule d'Euler on peut isoler le moment quadratique. Puisque nous supposons que la bielle a été obtenue par moulage, nous connaissons E (=170.000 MPa) et $l_k$ (=140,81 mm). Nous trouvons que $I = 6.6407*10^-10 [m^4]$. Enfin, en partant de la formule du moment quadratique d'une poutre profilée I, nous obtenons une équation liant hauteur d'âme, largeur de semelle et demi-largeur d'âme. On peut donc avec une assez grande liberté du choix des dimensions, pour autant qu'elles soient réalistes ! (Par exemple, la hauteur d'âme ne peut être plus grande que le grand axe de l'ellipse du piston, sinon la bielle ne rentre plus dans le cylindre !)
+Il s'agit maintenant de déterminer les dimensions de la section profilée I du corps de la bielle. On sait grâce à la question 3, que la force maximale subie par la bielle au cours d'un cycle vaut 50,225 kN. Cette force étant celle à partir de laquelle la bielle est sujette au flambage, il faut prévoir une marge de sécurité. Nous décidons arbitrairement de la fixer à 25\%. Grâce à cela, en utilisant la formule d'Euler on peut isoler le moment quadratique. Puisque nous supposons que la bielle a été obtenue par moulage, nous connaissons E (=170.000 MPa) et $l_k$ (=140,81 mm). Nous trouvons que $I = 6.6407*10^-10 [m^4]$. Enfin, en partant de la formule du moment quadratique d'une poutre profilée I, nous obtenons une équation liant hauteur d'âme, largeur de semelle et demi-largeur d'âme. On peut donc avec une assez grande liberté du choix des dimensions, pour autant qu'elles soient réalistes ! (Par exemple, la hauteur d'âme ne peut être plus grande que le grand axe de l'ellipse du piston, sinon la bielle ne rentre plus dans le cylindre !)
 Afin de déterminer ces trois inconnues, nous avons ajouté deux équations : $\frac{2*h}{3} = s$ et $2t=\frac{s}{4}$.
 
 A titre de comparaison, voici les résultats mesurés et ceux dimensionnés : 
@@ -178,6 +174,6 @@ On observe que les dimensions réelles sont très proches du double de nos prév
 
 \chapter{Annexe}
 
-Code Matlab ?
+\section{Code Matlab}
 
 \end{document}

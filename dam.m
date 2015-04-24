@@ -1,5 +1,14 @@
 function [] = dam()
 
+% EPL - LMECA1210 - Projet en construction mécanique 1
+% 24/04/2015
+% Groupe 1
+
+% Calcule la pression dans le cylindre d'une audi A4 lors d'un cycle moteur
+% et les efforts induits sur une bielle aux vitesses de 2500 rpm et 4000 rpm.
+% Affiche 3 graphes avec les résultats.
+
+
 % Partie PRESSIONS
 
 gamma=1.3;
