@@ -96,7 +96,6 @@ F_{tete} = -\frac{\pi D^2}{4}p(\theta) +  (m_{piston}+m_{bielle})R\omega^2 \cos(
 
 Voici les graphes représentant les efforts sur la bielle en fonction de l'angle du vilebrequin, à deux vitesses angulaires précises ($2500rpm$ et $4000rpm$):
 
-
 \begin{figure}[h!]
 \hspace{-2cm}
    \begin{minipage}[b]{0.40\linewidth}
@@ -109,7 +108,7 @@ Voici les graphes représentant les efforts sur la bielle en fonction de l'angle
    \end{minipage}
 \end{figure}
 
-Les efforts maximaux et minimaux à ces deux vitesses sont repris dans les tableaux ci-dessous: \\
+Les efforts maximaux et minimaux à ces deux vitesses sont repris dans les tableaux ci-dessous : \\
 
 \begin{figure}[h!]
 \begin{center}
@@ -144,6 +143,7 @@ Tête de la bielle &  7.503 & -43.798 \\
 \section{Justification de la forme de la bielle}
 
  Pour le corps de la bielle, il faut trouver le juste compromis entre masse et résistance. Pour une même forme de section, une augmentation de sa taille va de pair avec une hausse de la résistance et du poids de la bielle. La section profilée en I permet une résistance élevée au flambage tout en conservant une masse moins importante. Nous pouvons déterminer la force critique d'une poutre profilée en I grâce à la formule d'Euler : $F_{crit}$ = $\frac{\pi^2 *E*I}{(l_k)^2}$ où E est le module de Young, I le moment quadratique de la bielle et $l_k$ est la longueur de flambage de la poutre. Le module de Young étant propre au matériau et $l_k$ l'entraxe de la bielle, le seul moyen de maximiser la force à partir de laquelle apparaitra le flambage est de trouver la forme pour laquelle le moment quadratique [unité: $m^4$] est maximal. Voici la formule du moment quadratique d'une poutre profilée en I : $\frac{t}{6}*h^3*(1+\frac{3s}{h})$ où t est la demi-largeur de l'âme, s la largeur de la semelle et h la hauteur de l'âme. Ces distances sont annotées dans le dessin suivant\footnote{\url{http://fr.wikipedia.org/wiki/\%C3\%82me_\%28poutre\%29}}:
+ 
  \begin{figure}[H]
 \center
 \includegraphics[scale=0.15]{Poutrelle.png}
@@ -155,8 +155,9 @@ Tête de la bielle &  7.503 & -43.798 \\
 Il s'agit maintenant de déterminer les dimensions de la section profilée I du corps de la bielle. On sait grâce à la question 3, que la force maximale subie par la bielle au cours d'un cycle vaut 56,195 kN. Cette force étant celle à partir de laquelle la bielle est sujette au flambage, il faut prévoir une marge de sécurité. Nous décidons arbitrairement de la fixer à 25\%. Grâce à cela, en utilisant la formule d'Euler nous pouvons isoler le moment quadratique. Puisque nous supposons que la bielle a été obtenue par moulage, nous connaissons E (=170 000 MPa) et $l_k$ (=140,81 mm). Nous trouvons que $I = 8,301*10^{-10} [m^4]$. Enfin, en partant de la formule du moment quadratique d'une poutre profilée I, nous obtenons une équation liant hauteur d'âme, largeur de semelle et demi-largeur d'âme. On peut donc avec une assez grande liberté du choix des dimensions, déterminer ces 3 inconnues pour autant qu'elles soient réalistes ! (Par exemple, la hauteur d'âme ne peut pas être plus grande que le grand axe de l'ellipse du piston, sinon la bielle ne rentre plus dans le cylindre !)
 Afin de déterminer ces trois inconnues, nous avons ajouté deux équations : $\frac{2*h}{3} = s$ et $2t=\frac{s}{4}$.
 
-A titre de comparaison, voici les résultats mesurés et ceux dimensionnés :
-(A noter que pour le calcul de l'aire de la section de la bielle dimensionnée, nous avons arbitrairement fixé l'épaisseur de la semelle comme égale à celle de l'âme.)
+A titre de comparaison, voici les résultats mesurés et ceux dimensionnés 
+(à noter que pour le calcul de l'aire de la section de la bielle dimensionnée, nous avons arbitrairement fixé l'épaisseur de la semelle comme égale à celle de l'âme) :
+
 \begin{center}
 \begin{tabular}{|c||c|c|}
 \hline 
@@ -170,13 +171,15 @@ Epaisseur de l'âme & 3.8 & 1.98 \\
 \hline
 \end{tabular} \\
 \end{center}
+
 \begin{center}
 \begin{tabular}{|c||c|c|}
 \hline 
 \ & Déterminée grâce aux mesures de séance $[mm^2]$ & Dimensionnée $[mm^2]$ \\
 \hline
 Aire de la section & 200,17  &  47,05 \\
-\end{tabular}
+\hline
+\end{tabular} \\
 \end{center}
 
 On observe que les dimensions réelles sont très proches du double de nos prévisions. Cela peut s'expliquer de plusieurs manières: il est fort probable que le constructeur a choisi de prendre une grande marge de sécurité pour assurer un bon fonctionnement dans des conditions réelles, plus difficiles. De plus, la sécurité à une grande importance dans le secteur de l'automobile. On peut aussi estimer que le raisonnement suivi pour aboutir à nos résultats était simplifié et ne prenait pas compte de tous les paramètres, ce qui peut fausser les résultats.
